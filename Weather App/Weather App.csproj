@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-android33.0;net7.0-ios</TargetFrameworks>
+		<TargetFrameworks>net7.0-android33.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
@@ -36,6 +36,10 @@
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android|x64'">
 	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	</PropertyGroup>
+
+	<PropertyGroup>
+	  <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.22621.0</TargetFrameworks>
 	</PropertyGroup>
 
 	<ItemGroup>
