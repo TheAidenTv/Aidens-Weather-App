@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weather_App.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                x:Name="weatherImage"
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="An icon that reflecrs the current weather"
+                HeightRequest="200"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" />
+            
+            <!-- A label to display the weather -->
+            <Label
+                x:Name="weatherLabel"
+                FontSize="Title"
+                Text=""
+                HorizontalOptions="Center" />
+            
+            <!-- A label to display the temperature -->
+            <Label
+                x:Name="temperatureLabel"
+                Text=""
+                FontSize="Title"
+                HorizontalOptions="Center" />
+
+            <!-- A label asking for a postal code -->
+            <Label
+                Text="Enter a postal code"
+                FontSize="Title"
+                HorizontalOptions="Center" />
+            
+            <!-- A text field for the user to enter a postal code -->
+            <Entry
+                x:Name="postalCodeEntry"
+                Placeholder="e.g. E2S3A7"
+                Keyboard="Default"
+                HorizontalOptions="Center"
+                WidthRequest="200" />
+            
+            <!-- A button to get the weather -->
+            <Button
+                Text="Get Weather"
+                Clicked="OnGetWeatherButtonClicked"
+                HorizontalOptions="Center"
+                WidthRequest="200" />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
